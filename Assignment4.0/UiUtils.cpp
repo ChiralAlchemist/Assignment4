@@ -101,6 +101,11 @@ void UiUtils::recieveInput(string& var, vector<string> acceptedInput)
 	} while (nonValidInput);
 }
 
+void UiUtils::recieveLineFromFile(string & var)
+{
+	getline(inFile, var);
+}
+
 void UiUtils::openFile()
 {
 	
@@ -111,8 +116,11 @@ void UiUtils::openFile()
 		recieveInput(inputFileName);
 		inFile.close();
 		inFile.open(inputFileName);
-		cout <<"infile is open" << inFile.is_open() << endl;
-	} while (inFile.is_open());
+		if (inFile.is_open() == false) 
+		{
+			sendOutput("Invalid Filename please try renter");
+		}
+	} while (inFile.is_open() == false);
 	
 	
 }

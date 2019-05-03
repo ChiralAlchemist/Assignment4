@@ -153,6 +153,8 @@
   <ItemGroup>
     <ClInclude Include="Color.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="QueType.h" />
+    <ClInclude Include="TreeType.h" />
     <ClInclude Include="UiUtils.h" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +165,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="QueType.cpp" />
+    <ClCompile Include="TreeType.cpp" />
     <ClCompile Include="UiUtils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
