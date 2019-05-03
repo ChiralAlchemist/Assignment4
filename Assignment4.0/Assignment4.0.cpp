@@ -32,7 +32,7 @@ string getNextWord(string& str)
 
 	return result;
 }
-
+using namespace std;
 int main()
 {
 	UiUtils programUi;
@@ -50,13 +50,18 @@ int main()
 	while(fileToAnalyze.length() > 0 || fileToAnalyze == "<eof>")
 	{
 		nextWord = getNextWord(fileToAnalyze);
+		programUi.sendOutput("next word is " + nextWord);
 		words.PutItem(nextWord);
 	}
-	programUi.sendOutput(nextWord);
-	words.PutItem(nextWord);
+	//programUi.sendOutput(nextWord);
+	//words.PutItem(nextWord);
 	bool deleteLater;
-	int test = words.GetItem("pipes", deleteLater);
-	programUi.sendOutput(to_string(test));
+	programUi.sendOutput(words.GetLength())
+	programUi.sendOutput("words.print");
+	words.Print(std::cout);
+	
+	//int test = words.GetItem("pipes", deleteLater);
+	//programUi.sendOutput(to_string(test));
 	//get special words
 	//programUi.sendOutput("Enter special words");
 

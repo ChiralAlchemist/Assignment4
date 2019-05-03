@@ -103,7 +103,7 @@ void TreeType::PutItem(string item)
 }
 
 
-void Insert(TreeNode*& tree, string item)
+void TreeType::Insert(TreeNode*& tree, string item)
 // Inserts item into tree.
 // Post:  item is in tree; search property is maintained.
 {
@@ -114,6 +114,7 @@ void Insert(TreeNode*& tree, string item)
 		tree->left = NULL;
 		tree->info = item;
 		tree->frequency = 1;
+		length++;
 	}
 	else if (item == tree->info)
 	{
@@ -191,18 +192,21 @@ void GetPredecessor(TreeNode* tree, string& data)
 	data = tree->info;
 }
 
-void PrintTree(TreeNode* tree, std::ofstream& outFile)
+void PrintTree(TreeNode* tree, std::ostream& outFile)
 // Prints info member of items in tree in sorted order on outFile.
 {
 	if (tree != NULL)
 	{
-		PrintTree(tree->left, outFile);   // Print left subtree.
+		PrintTree(tree->left, outFile);// Print left subtree.
+		outFile << " word is ";
 		outFile << tree->info;
+		outFile << tree->frequency;
+		outFile << std::endl;
 		PrintTree(tree->right, outFile);  // Print right subtree.
 	}
 }
 
-void TreeType::Print(std::ofstream& outFile) const
+void TreeType::Print(std::ostream& outFile) const
 // Calls recursive function Print to print items in the tree.
 {
 	PrintTree(root, outFile);

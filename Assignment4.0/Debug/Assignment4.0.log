@@ -1,2 +1,5 @@
-﻿  TreeType.cpp
+﻿  Assignment4.0.cpp
+c:\users\chiralalchemist\projects\assignment4\assignment4.0\assignment4.0.cpp(58): warning C4101: 'deleteLater': unreferenced local variable
+  TreeType.cpp
+  Generating Code...
   Assignment4.0.vcxproj -> C:\Users\ChiralAlchemist\projects\Assignment4\Debug\Assignment4.0.exe

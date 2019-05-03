@@ -19,12 +19,14 @@ public:
 	int GetLength() const;
 	int GetItem(string item, bool& found);
 	void PutItem(string item);
+	void Insert(TreeNode *& tree, string item);
 	void DeleteItem(string item);
 	void ResetTree(OrderType order);
 	string GetNextItem(OrderType order, bool& finished);
-	void Print(std::ofstream& outFile) const;
+	void Print(std::ostream& outFile) const;
 private:
 	TreeNode* root;
+	int length; 
 	QueType preQue;
 	QueType inQue;
 	QueType postQue;
